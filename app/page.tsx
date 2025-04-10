@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 export default function LowResViewer() {
   const [url, setUrl] = useState("");
@@ -16,12 +14,15 @@ export default function LowResViewer() {
   return (
     <div className="p-4 space-y-4 max-w-4xl mx-auto">
       <form onSubmit={handleSubmit} className="flex gap-2">
-        <Input
+        <input
+          className="border px-4 py-2 w-full rounded"
           placeholder="https://example.com"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
         />
-        <Button type="submit">보기</Button>
+        <button type="submit" className="bg-black text-white px-4 py-2 rounded">
+          보기
+        </button>
       </form>
 
       {submittedUrl && (
